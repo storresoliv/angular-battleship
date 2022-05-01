@@ -1,16 +1,16 @@
 # DOCUMENTO DISEÑO
-El proposito de este documento es mostrar el disenio que se implementa en el desarrollo de la aplicacion.
+El proposito de este documento es mostrar el diseño que se implementa para el desarrollo de la aplicacion.
 
 # INDICE
 - [Modulos del software](#MODULOS%DEL%SOFTWARE)
-- [Disenio arquitectonico](#DISENIO%ARQUITECTONICO)
-- [Disenio de datos](#DISENIO%DE%DATOS)
-- [Disenio de interfaz](#DISENIO%DE%INTERFAZ)
+- [Diseño arquitectonico](#DISEÑO%ARQUITECTONICO)
+- [Diseño de datos](#DISEÑO%DE%DATOS)
+- [Diseño de interfaz](#DISEÑO%DE%INTERFAZ)
 
 # MODULOS DEL SOFTWARE
 
-# DISENIO ARQUITECTONICO
+# DISEÑO ARQUITECTONICO
 
-# DISENIO DE DATOS
+# DISEÑO DE DATOS
 
-# DISENIO DE INTERFAZ
+# DISEÑO DE INTERFAZ
