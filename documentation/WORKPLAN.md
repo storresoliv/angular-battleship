@@ -49,7 +49,7 @@ Generar un proyecto con calidad el cual permita jugar al juego de mesa Battleshi
 - Implementar la aplicacion.
 
 # HITOS
-- documento [Workplan](#https://github.com/storresoliv/angular-battleship/blob/feature-docs/documentation/WORKPLAN.md)
-- documento [Requirements](#https://github.com/storresoliv/angular-battleship/blob/feature-docs/documentation/REQUIREMENTS.md)
-- documento [Design](#https://github.com/storresoliv/angular-battleship/blob/feature-docs/documentation/DESIGN.md)
-- documento [Testplan](#https://github.com/storresoliv/angular-battleship/blob/feature-docs/documentation/TESTPLAN.md)
+- documento [Workplan](./WORKPLAN.md)
+- documento [Requirements](./REQUIREMENTS.md)
+- documento [Design](./DESIGN.md)
+- documento [Testplan](./TESTPLAN.md)
