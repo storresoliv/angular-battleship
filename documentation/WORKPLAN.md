@@ -48,7 +48,7 @@ Generar un proyecto con calidad el cual permita jugar al juego de mesa Battleshi
 - Generar modelo solucion.
 - Implementar la aplicacion.
 
-# HITOS
+# DOCUMENTOS
 - documento [Workplan](./WORKPLAN.md)
 - documento [Requirements](./REQUIREMENTS.md)
 - documento [Design](./DESIGN.md)
