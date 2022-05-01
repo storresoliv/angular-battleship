@@ -41,7 +41,7 @@ Generar un proyecto con calidad el cual permita jugar al juego de mesa Battleshi
     - Generar documento de requerimientos.
     - Diseñar los modulos del modelo solucion.
     - Diseñar la interfaz grafica de usuario.
-    - Diseñar un modelo entidad-relacion.
+    - Diseñar un modelo de clases.
     - Generar documento de diseño.
     - Diseñar plan de pruebas.
     - Generar documento plan de pruebas.
