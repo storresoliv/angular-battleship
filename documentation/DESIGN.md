@@ -2,11 +2,11 @@
 El proposito de este documento es mostrar el diseño que se implementa para el desarrollo de la aplicacion.
 
 # INDICE
-- [Modulos del software](#MODULOS_DEL_SOFTWARE)
-- [Librerias de terceros](#LIBRERIAS_DE_TERCEROS)
-- [Diseño arquitectonico](#DISEÑO_ARQUITECTONICO)
-- [Diseño de datos](#DISEÑO_DE_DATOS)
-- [Diseño de interfaz](#DISEÑO_DE_INTERFAZ)
+- [Modulos del software](#modulos-del-software)
+- [Librerias de terceros](#librerias-de-terceros)
+- [Diseño arquitectonico](#diseño-arquitectonico)
+- [Diseño de datos](#diseño-de-datos)
+- [Diseño de interfaz](#diseño-de-interfaz)
 
 # MODULOS DEL SOFTWARE
 - AppModule: modulo principal en cual se genera con el boilerplate de Angular.
