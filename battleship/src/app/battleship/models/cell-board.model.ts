@@ -5,10 +5,16 @@ type State = 'clean' | 'hit' | 'destroy' | 'fail';
 export class CellBoard {
   private _position: IPosition;
   private _state: State;
+  private _isShip: boolean;
 
   constructor(position: IPosition) {
     this._position = position;
     this._state = 'clean';
+    this._isShip = false;
+  }
+
+  public get isShip(): boolean {
+    return this._isShip;
   }
 
   public get state(): State {
@@ -21,5 +27,9 @@ export class CellBoard {
 
   public setState(newState: State): void {
     this._state = newState;
+  }
+
+  public setShip(): void {
+    this._isShip = true;
   }
 }
