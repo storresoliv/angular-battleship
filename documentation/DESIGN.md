@@ -9,14 +9,14 @@ El proposito de este documento es mostrar el diseño que se implementa para el d
 - [Diseño de interfaz](#DISEÑO_DE_INTERFAZ)
 
 # MODULOS DEL SOFTWARE
-- Modulo App: modulo principal en cual se genera con el boilerplate de Angular.
-- Modulo Battleship: modulo que orquesta los modulos necesarios para el correcto funcionamiento del juego.
-- Modulo Gameboard: modulo que controla y renderiza las celdas del tablero.
-- Modulo Ship: modulo que se encarga de crear los barcos.
-- Modulo Fire: modulo que mantiene informacion sobre los tiros del juego.
-- Modulo Config: modulo que mantiene la informacion parametrizable del juego.
-- Modulo Record: modulo que muestra informacion sobre las partidas realizadas.
-- Modulo Router: modulo principal el cual controla la carga de los modulos de entrada.
+- AppModule: modulo principal en cual se genera con el boilerplate de Angular.
+- AppRouterModule: modulo que controla la carga de modulos de entrada.
+- BattleshipModule: modulo que orquesta los modulos necesarios para el correcto funcionamiento del juego.
+- GameboardModule: modulo que controla y renderiza las celdas del tablero.
+- ShipModule: modulo que se encarga de crear los barcos.
+- FireModule: modulo que mantiene informacion sobre los tiros del juego.
+- ConfigModule: modulo que mantiene la informacion parametrizable del juego.
+- RecordModule: modulo que muestra informacion sobre las partidas realizadas.
 
 # LIBRERIAS DE TERCEROS
 - Angular
@@ -24,12 +24,12 @@ El proposito de este documento es mostrar el diseño que se implementa para el d
 - Tailwindcss
 
 # NOTACION
-- Camel Case: para variables, atributos y metodos.
-- Pascal Case: para clases.
-- snake case: para constantes.
+- Camel case: para variables, atributos y metodos.
+- Pascal case: para clases.
+- Snake case: para constantes.
 
 # NOMENCLATURA
-Estandares para el nombramiento de conceptos (clases) en angular:
+Estandares para los nombres de conceptos (clases) en angular:
 - modulo: NameModule
 - componente: NameComponent
 - servicio: NameService
@@ -38,5 +38,25 @@ Estandares para el nombramiento de conceptos (clases) en angular:
 
 
 # DISEÑO DE DATOS
+<p align="center">
+    <img src="./images/angular_diagram.png">
+</p>
+<p align="center">
+    Fig.1 - Diagrama de los modulos Angular
+</p>
+
+<p align="center">
+    <img src="./images/battleship_diagram.png">
+</p>
+<p align="center">
+    Fig.2 - Diagrama del modulo Battleship
+</p>
+
+<p align="center">
+    <img src="./images/models_diagram.png">
+</p>
+<p align="center">
+    Fig.3 - Diagrama de los modelos
+</p>
 
 # DISEÑO DE INTERFAZ
