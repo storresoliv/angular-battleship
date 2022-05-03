@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run --prefix ./battleship start",
     "build": "npm run --prefix ./battleship build",
-    "build:prod": "npm run --prefix ./battleship build:prod -- --output-path=../public",
+    "build:prod": "npm run --prefix ./battleship build:prod -- --output-path=../public --base-href='https://storresoliv.github.io/'",
     "test": "npm run --prefix ./battleship test",
     "test:watch": "npm run --prefix ./battleship test:watch",
     "postinstall": "npm run --prefix ./battleship install:deps",
