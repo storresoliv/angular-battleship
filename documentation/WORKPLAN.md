@@ -53,3 +53,4 @@ Generar un proyecto con calidad el cual permita jugar al juego de mesa Battleshi
 - documento [Requirements](./REQUIREMENTS.md)
 - documento [Design](./DESIGN.md)
 - documento [Testplan](./TESTPLAN.md)
+- documento [Solution](./SOLUTION.md)
