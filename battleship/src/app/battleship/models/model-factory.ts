@@ -1,45 +1,49 @@
 import { DIRECTION } from '../battleship.constant';
 import { CellBoard } from './cell-board.model';
 import { GameBoard } from './game-board.model';
-import { IPosition } from './position.model';
+import { Position } from './position.model';
 import { Ship } from './ship.model';
 import { Shot } from './shot.model';
 
 export class ModelFactory {
+  public static createPosition(x: number, y: number): Position {
+    return new Position(x, y);
+  }
+
   public static createShip(size?: number): Ship {
     return new Ship(size);
   }
 
-  public static createShot(x: number, y: number): Shot {
-    return new Shot({ x, y });
+  public static createShot(position: Position): Shot {
+    return new Shot(position);
   }
 
-  public static createCellBoard(x: number, y: number): CellBoard {
-    return new CellBoard({ x, y });
+  public static createCellBoard(position: Position): CellBoard {
+    return new CellBoard(position);
   }
 
   public static createGameBoard(dimension: number, ships: Ship[]): GameBoard {
     return new GameBoard(dimension, ships);
   }
 
-  public static createPosition(refPos: IPosition, sense: DIRECTION): IPosition {
-    let newPos: IPosition;
+  public static addPosition(refPos: Position, sense: DIRECTION): Position {
+    let newPos: Position;
 
     switch (sense) {
       case DIRECTION.RIGHT:
-        newPos = { x: refPos.x + 1, y: refPos.y };
+        newPos = ModelFactory.createPosition(refPos.x + 1, refPos.y);
         break;
 
       case DIRECTION.LEFT:
-        newPos = { x: refPos.x - 1, y: refPos.y };
+        newPos = ModelFactory.createPosition(refPos.x - 1, refPos.y);
         break;
 
       case DIRECTION.UP:
-        newPos = { x: refPos.x, y: refPos.y + 1 };
+        newPos = ModelFactory.createPosition(refPos.x, refPos.y + 1);
         break;
 
       case DIRECTION.DOWN:
-        newPos = { x: refPos.x, y: refPos.y - 1 };
+        newPos = ModelFactory.createPosition(refPos.x, refPos.y - 1);
         break;
 
       default:

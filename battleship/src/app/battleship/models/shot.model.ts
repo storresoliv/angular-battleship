@@ -1,13 +1,16 @@
-import { IPosition } from './position.model';
+import { ObjectValue } from './object-value';
+import { Position } from './position.model';
 
-export class Shot {
-  private _position: IPosition;
+export class Shot extends ObjectValue {
+  private _position: Position;
 
-  constructor(position: IPosition) {
+  constructor(position: Position) {
+    super();
+
     this._position = position;
   }
 
-  public get position(): IPosition {
+  public get position(): Position {
     return this._position;
   }
 }

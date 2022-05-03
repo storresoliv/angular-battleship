@@ -1,15 +1,17 @@
-import { IPosition } from './position.model';
+import { STATE } from '../battleship.constant';
+import { ObjectValue } from './object-value';
+import { Position } from './position.model';
 
-type State = 'clean' | 'hit' | 'destroy' | 'fail';
-
-export class CellBoard {
-  private _position: IPosition;
-  private _state: State;
+export class CellBoard extends ObjectValue {
+  private _position: Position;
+  private _state: STATE;
   private _isShip: boolean;
 
-  constructor(position: IPosition) {
+  constructor(position: Position) {
+    super();
+
     this._position = position;
-    this._state = 'clean';
+    this._state = STATE.CLEAN;
     this._isShip = false;
   }
 
@@ -17,15 +19,15 @@ export class CellBoard {
     return this._isShip;
   }
 
-  public get state(): State {
+  public get state(): STATE {
     return this._state;
   }
 
-  public get position(): IPosition {
+  public get position(): Position {
     return this._position;
   }
 
-  public setState(newState: State): void {
+  public setState(newState: STATE): void {
     this._state = newState;
   }
 

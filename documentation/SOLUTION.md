@@ -1,5 +1,5 @@
 # MODELO SOLUCION
-En este documento se especifica el modelo solucion para la problematica planteada.
+En este documento se especifica el modelo que se implementa para resolver los requerimientos.
 
 # INSERTAR BARCOS ALEATORIAMENTE EN EL GAMEBOARD
 <p align="center">

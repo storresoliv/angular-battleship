@@ -1,11 +1,14 @@
-import { IPosition } from './position.model';
+import { ObjectValue } from './object-value';
+import { Position } from './position.model';
 
-export class Ship {
+export class Ship extends ObjectValue {
   private _hits: number;
-  private _positions: IPosition[];
+  private _positions: Position[];
   private _size: number;
 
   constructor(size = 0) {
+    super();
+
     this._positions = [];
     this._size = size;
     this._hits = 0;
@@ -15,7 +18,7 @@ export class Ship {
     return this._size ? this._size : this._positions.length;
   }
 
-  public get positions(): IPosition[] {
+  public get positions(): Position[] {
     return this._positions;
   }
 
@@ -27,7 +30,7 @@ export class Ship {
     return this._hits === this.size;
   }
 
-  public build(positions: IPosition[]) {
+  public build(positions: Position[]) {
     if (this._size > 0 && this._size !== positions.length) return;
     if (this._positions.length > 0) return;
 
