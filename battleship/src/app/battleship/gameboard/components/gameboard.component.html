@@ -1,0 +1,14 @@
+<section *ngIf="gameboard" class="gameboard">
+  <ul *ngFor="let row of getBoard(); index as x" class="gameboard__row">
+    <li
+      *ngFor="let cell of row; index as y"
+      [ngClass]="['gameboard__cell', 'gameboard__cell--' + cell.state]"
+      (click)="fireShot(x, y)"
+    ></li>
+  </ul>
+</section>
+<section *ngIf="gameboard" class="text-center">
+  <p>barcos: {{ gameboard.ships.length }}</p>
+  <p>dimension: {{ gameboard.dimension }}</p>
+  <p>turnos: {{ shots > 0 ? shots : "infinitos" }}</p>
+</section>
