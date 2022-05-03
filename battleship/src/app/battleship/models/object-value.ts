@@ -4,7 +4,7 @@ export class ObjectValue {
     try {
       result = JSON.stringify(this);
     } catch (error) {
-      this.throwError('error to try transform object to string');
+      this.throwError(`error to try transform ${this.constructor.name} to string`);
     }
 
     return result;

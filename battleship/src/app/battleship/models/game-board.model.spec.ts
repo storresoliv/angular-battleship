@@ -1,8 +1,8 @@
-import { ModelFactory } from './model-factory';
+import { ModelsFactory } from './models.factory';
 
 describe('Game Board', () => {
   it('should create', () => {
-    let gameBoard = ModelFactory.createGameBoard(10, []);
+    let gameBoard = ModelsFactory.createGameBoard(10, []);
 
     let { board } = gameBoard;
 
@@ -12,8 +12,8 @@ describe('Game Board', () => {
   });
 
   it('should insert a ship', () => {
-    let ship = ModelFactory.createShip(1);
-    let gameBoard = ModelFactory.createGameBoard(10, [ship]);
+    let ship = ModelsFactory.createShip(1);
+    let gameBoard = ModelsFactory.createGameBoard(10, [ship]);
     let [shipPos] = ship.positions;
 
     let { board } = gameBoard;
@@ -24,15 +24,15 @@ describe('Game Board', () => {
   });
 
   it('should insert ships', () => {
-    let ship1 = ModelFactory.createShip(1);
-    let ship2 = ModelFactory.createShip(2);
-    let ship3 = ModelFactory.createShip(3);
-    let ship4 = ModelFactory.createShip(4);
-    let ship5 = ModelFactory.createShip(5);
+    let ship1 = ModelsFactory.createShip(1);
+    let ship2 = ModelsFactory.createShip(2);
+    let ship3 = ModelsFactory.createShip(3);
+    let ship4 = ModelsFactory.createShip(4);
+    let ship5 = ModelsFactory.createShip(5);
 
     let dimension = 10;
 
-    let gameBoard = ModelFactory.createGameBoard(dimension, [
+    let gameBoard = ModelsFactory.createGameBoard(dimension, [
       ship5,
       ship4,
       ship3,

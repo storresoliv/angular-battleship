@@ -5,7 +5,7 @@ import { Position } from './position.model';
 import { Ship } from './ship.model';
 import { Shot } from './shot.model';
 
-export class ModelFactory {
+export class ModelsFactory {
   public static createPosition(x: number, y: number): Position {
     return new Position(x, y);
   }
@@ -31,19 +31,19 @@ export class ModelFactory {
 
     switch (sense) {
       case DIRECTION.RIGHT:
-        newPos = ModelFactory.createPosition(refPos.x + 1, refPos.y);
+        newPos = ModelsFactory.createPosition(refPos.x + 1, refPos.y);
         break;
 
       case DIRECTION.LEFT:
-        newPos = ModelFactory.createPosition(refPos.x - 1, refPos.y);
+        newPos = ModelsFactory.createPosition(refPos.x - 1, refPos.y);
         break;
 
       case DIRECTION.UP:
-        newPos = ModelFactory.createPosition(refPos.x, refPos.y + 1);
+        newPos = ModelsFactory.createPosition(refPos.x, refPos.y + 1);
         break;
 
       case DIRECTION.DOWN:
-        newPos = ModelFactory.createPosition(refPos.x, refPos.y - 1);
+        newPos = ModelsFactory.createPosition(refPos.x, refPos.y - 1);
         break;
 
       default:

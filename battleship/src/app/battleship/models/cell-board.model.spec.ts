@@ -1,10 +1,10 @@
 import { STATE } from '../battleship.constant';
-import { ModelFactory } from './model-factory';
+import { ModelsFactory } from './models.factory';
 
 describe('Cell Board', () => {
   it('should create', () => {
-    let position = ModelFactory.createPosition(0, 0);
-    let cellBoard = ModelFactory.createCellBoard(position);
+    let position = ModelsFactory.createPosition(0, 0);
+    let cellBoard = ModelsFactory.createCellBoard(position);
 
     let expectedPos = { x: 0, y: 0 };
 
@@ -15,8 +15,8 @@ describe('Cell Board', () => {
   });
 
   it('should hit', () => {
-    let position = ModelFactory.createPosition(0, 0);
-    let cellBoard = ModelFactory.createCellBoard(position);
+    let position = ModelsFactory.createPosition(0, 0);
+    let cellBoard = ModelsFactory.createCellBoard(position);
 
     cellBoard.setState(STATE.HIT);
 

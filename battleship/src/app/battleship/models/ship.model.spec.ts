@@ -1,20 +1,20 @@
-import { ModelFactory } from './model-factory';
+import { ModelsFactory } from './models.factory';
 
 describe('Ship', () => {
   it('should create', () => {
-    let ship = ModelFactory.createShip();
+    let ship = ModelsFactory.createShip();
 
     expect(ship).toBeTruthy();
   });
 
   it('should size be 4', () => {
-    let ship = ModelFactory.createShip();
+    let ship = ModelsFactory.createShip();
 
     ship.build([
-      ModelFactory.createPosition(0, 0),
-      ModelFactory.createPosition(1, 0),
-      ModelFactory.createPosition(2, 0),
-      ModelFactory.createPosition(3, 0),
+      ModelsFactory.createPosition(0, 0),
+      ModelsFactory.createPosition(1, 0),
+      ModelsFactory.createPosition(2, 0),
+      ModelsFactory.createPosition(3, 0),
     ]);
 
     let { size } = ship;
@@ -23,12 +23,12 @@ describe('Ship', () => {
   });
 
   it('should build', () => {
-    let ship = ModelFactory.createShip();
+    let ship = ModelsFactory.createShip();
 
     ship.build([
-      ModelFactory.createPosition(0, 0),
-      ModelFactory.createPosition(1, 0),
-      ModelFactory.createPosition(2, 0),
+      ModelsFactory.createPosition(0, 0),
+      ModelsFactory.createPosition(1, 0),
+      ModelsFactory.createPosition(2, 0),
     ]);
 
     let {
@@ -39,20 +39,20 @@ describe('Ship', () => {
   });
 
   it('should not re-build', () => {
-    let ship = ModelFactory.createShip();
+    let ship = ModelsFactory.createShip();
     let isBuilded = false;
 
     ship.build([
-      ModelFactory.createPosition(0, 0),
-      ModelFactory.createPosition(1, 0),
-      ModelFactory.createPosition(2, 0),
+      ModelsFactory.createPosition(0, 0),
+      ModelsFactory.createPosition(1, 0),
+      ModelsFactory.createPosition(2, 0),
     ]);
 
     try {
       ship.build([
-        ModelFactory.createPosition(0, 1),
-        ModelFactory.createPosition(1, 1),
-        ModelFactory.createPosition(2, 1),
+        ModelsFactory.createPosition(0, 1),
+        ModelsFactory.createPosition(1, 1),
+        ModelsFactory.createPosition(2, 1),
       ]);
     } catch (error) {
       isBuilded = true;
@@ -67,12 +67,12 @@ describe('Ship', () => {
   });
 
   it('should not be destroyed', () => {
-    let ship = ModelFactory.createShip();
+    let ship = ModelsFactory.createShip();
 
     ship.build([
-      ModelFactory.createPosition(0, 0),
-      ModelFactory.createPosition(1, 0),
-      ModelFactory.createPosition(2, 0),
+      ModelsFactory.createPosition(0, 0),
+      ModelsFactory.createPosition(1, 0),
+      ModelsFactory.createPosition(2, 0),
     ]);
 
     ship.hit();
@@ -84,11 +84,11 @@ describe('Ship', () => {
   });
 
   it('should be destroyed', () => {
-    let ship = ModelFactory.createShip();
+    let ship = ModelsFactory.createShip();
 
     ship.build([
-      ModelFactory.createPosition(0, 0),
-      ModelFactory.createPosition(1, 0),
+      ModelsFactory.createPosition(0, 0),
+      ModelsFactory.createPosition(1, 0),
     ]);
 
     ship.hit();

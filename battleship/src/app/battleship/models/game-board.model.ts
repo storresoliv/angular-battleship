@@ -1,6 +1,6 @@
 import { DIRECTION } from '../battleship.constant';
 import { CellBoard } from './cell-board.model';
-import { ModelFactory } from './model-factory';
+import { ModelsFactory } from './models.factory';
 import { ObjectValue } from './object-value';
 import { Position } from './position.model';
 import { Ship } from './ship.model';
@@ -55,8 +55,8 @@ export class GameBoard extends ObjectValue {
       row = [];
 
       for (let y = 0; y < this._dimension; y++) {
-        let position = ModelFactory.createPosition(x, y);
-        let cellBoard = ModelFactory.createCellBoard(position);
+        let position = ModelsFactory.createPosition(x, y);
+        let cellBoard = ModelsFactory.createCellBoard(position);
 
         row.push(cellBoard);
       }
@@ -118,7 +118,7 @@ export class GameBoard extends ObjectValue {
     while (!done) {
       let isEmpty = false;
       sense = senses[senseRandom];
-      newPosition = ModelFactory.addPosition(prevPosition, sense);
+      newPosition = ModelsFactory.addPosition(prevPosition, sense);
 
       if (prevPosition.toString() !== newPosition.toString()) {
         isEmpty = this.isEmptyPosition(newPosition, board);
@@ -170,7 +170,7 @@ export class GameBoard extends ObjectValue {
     let x = getRandomInt(this._dimension);
     let y = getRandomInt(this._dimension);
 
-    return ModelFactory.createPosition(x, y);
+    return ModelsFactory.createPosition(x, y);
   }
 
   private isEmptyPosition(position: Position, board: CellMatrix): boolean {
