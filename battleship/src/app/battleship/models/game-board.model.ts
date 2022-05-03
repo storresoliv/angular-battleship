@@ -77,19 +77,26 @@ export class GameBoard {
   }
 
   private createShipPositions(ship: Ship, board: CellMatrix): IPosition[] {
-    let startPosition = this.createEmptyPosition(board);
-    let positions: IPosition[] = [];
-
-    positions.push(startPosition);
+    let positions: IPosition[] = [this.createEmptyPosition(board)];
 
     if (ship.size === 1) {
       return positions;
     }
 
+    positions = this.findPositions(ship, board);
+
+    return positions;
+  }
+
+  private findPositions(ship: Ship, board: CellMatrix): IPosition[] {
+    let startPosition = this.createEmptyPosition(board);
+    let positions: IPosition[] = [startPosition];
+
     let prevPosition = startPosition;
     let sizeThreshold = ship.size;
     let senseThreshold = 4;
     let senseChanges = 0;
+    let senseRandom = getRandomInt(senseThreshold);
     let vectorPosition = 0;
     let done = false;
     let fail = false;
@@ -98,7 +105,7 @@ export class GameBoard {
 
     while (!done) {
       let isEmpty = false;
-      sense = senses[senseChanges];
+      sense = senses[senseRandom];
       newPosition = ModelFactory.createPosition(prevPosition, sense);
 
       if (normalize(prevPosition) !== normalize(newPosition)) {
@@ -112,7 +119,12 @@ export class GameBoard {
         vectorPosition++;
       } else {
         senseChanges++;
+        senseRandom++;
         positions = [];
+
+        if (senseRandom > senseThreshold) {
+          senseRandom = 0;
+        }
       }
 
       if (senseChanges === senseThreshold - 1) {
@@ -126,11 +138,11 @@ export class GameBoard {
     }
 
     if (fail) {
-      return this.createShipPositions(ship, board);
+      return this.findPositions(ship, board);
     }
 
-    if (positions.length === 0) {
-      return this.createShipPositions(ship, board);
+    if (ship.size !== positions.length) {
+      return this.findPositions(ship, board);
     }
 
     return positions;

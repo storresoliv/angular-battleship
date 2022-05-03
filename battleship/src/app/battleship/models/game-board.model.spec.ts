@@ -1,7 +1,5 @@
 import { ModelFactory } from './model-factory';
 
-const normalize = (object: any) => JSON.stringify(object);
-
 describe('Game Board', () => {
   it('should create', () => {
     let gameBoard = ModelFactory.createGameBoard(10, []);
@@ -31,6 +29,7 @@ describe('Game Board', () => {
     let ship3 = ModelFactory.createShip(3);
     let ship4 = ModelFactory.createShip(4);
     let ship5 = ModelFactory.createShip(5);
+
     let dimension = 10;
 
     let gameBoard = ModelFactory.createGameBoard(dimension, [
