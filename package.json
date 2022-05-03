@@ -1,0 +1,35 @@
+{
+  "name": "angular-battleship",
+  "version": "1.0.0",
+  "description": "battleship game",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run --prefix ./battleship start",
+    "build": "npm run --prefix ./battleship build",
+    "build:prod": "npm run --prefix ./battleship build:prod -- --output-path=../public",
+    "test": "npm run --prefix ./battleship test",
+    "test:watch": "npm run --prefix ./battleship test:watch",
+    "deploy": "git push origin `git subtree split --prefix public main`:gh-pages --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storresoliv/angular-battleship.git"
+  },
+  "keywords": [
+    "battleship"
+  ],
+  "author": "SATO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/storresoliv/angular-battleship/issues"
+  },
+  "homepage": "https://github.com/storresoliv/angular-battleship#readme",
+  "devDependencies": {
+    "husky": "^7.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build:prod"
+    }
+  }
+}
