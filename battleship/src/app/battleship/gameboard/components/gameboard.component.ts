@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Logger } from 'src/app/utils/logger';
 import { STATE } from '../../battleship.constant';
 import { CellBoard, GameBoard, Ship } from '../../models';
 import { GameboardService } from '../services/gameboard.service';
@@ -40,10 +41,12 @@ export class GameboardComponent implements OnInit {
 
     if (cellBoard.state !== STATE.CLEAN) return;
 
+    Logger.debug(`fireShot is emitted on (${x},${y}) position`);
+
     cellBoard.setState(STATE.FAIL);
 
     if (cellBoard.isShip) {
-      cellBoard.setState(STATE.HIT);
+      Logger.debug('this cell contain a ship: +1 hit');
 
       let ship = this.findShip(x, y);
 
@@ -51,7 +54,11 @@ export class GameboardComponent implements OnInit {
         ship.hit();
       }
 
+      cellBoard.setState(STATE.HIT);
+
       if (ship?.isDestroyed) {
+        Logger.debug('this ship has been destroyed.');
+
         this.destroyShip(ship);
       }
     }

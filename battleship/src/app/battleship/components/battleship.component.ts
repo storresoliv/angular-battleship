@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Logger } from 'src/app/utils/logger';
 import { GameboardService } from '../gameboard/services/gameboard.service';
 import { GameBoard, Ship } from '../models';
 import { ShipService } from '../ship/services/ship.service';
@@ -15,14 +16,19 @@ export class BattleshipComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    Logger.debug('building...');
     this.buildGame();
   }
 
   private buildGame(): void {
+    Logger.debug('creating ships...');
     let ships = this.createShips();
+
+    Logger.debug('creating gameboard...');
     let gameboard = this.createGameboard(10, ships);
 
-    this.gameboardService.loadGameboard(gameboard)
+    Logger.debug('load gameboard...')
+    this.gameboardService.loadGameboard(gameboard);
   }
 
   private createShips(): Ship[] {
