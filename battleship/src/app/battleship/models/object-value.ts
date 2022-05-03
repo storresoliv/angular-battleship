@@ -4,9 +4,13 @@ export class ObjectValue {
     try {
       result = JSON.stringify(this);
     } catch (error) {
-      console.error('error to try transform object to string');
+      this.throwError('error to try transform object to string');
     }
 
     return result;
+  }
+
+  public throwError(message: string): Error {
+    throw new Error(`[${this.constructor.name}]: ${message}`);
   }
 }

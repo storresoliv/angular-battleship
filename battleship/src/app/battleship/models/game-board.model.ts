@@ -97,7 +97,7 @@ export class GameBoard extends ObjectValue {
     retry = 0
   ): Position[] {
     if (retry === MAX_RETRY)
-      throw new Error('can create position for this ship.');
+      this.throwError('can create position for this ship.');
 
     retry++;
 

@@ -31,8 +31,14 @@ export class Ship extends ObjectValue {
   }
 
   public build(positions: Position[]) {
-    if (this._size > 0 && this._size !== positions.length) return;
-    if (this._positions.length > 0) return;
+    if (positions.length === 0) this.throwError('positions can not be empty.');
+
+    if (this._size > 0 && this._size !== positions.length)
+      this.throwError(
+        `positions length should be ${this._size} instead ${positions.length}`
+      );
+    if (this._positions.length > 0)
+      this.throwError('this ship is already builded.');
 
     this._positions = positions;
   }

@@ -40,6 +40,7 @@ describe('Ship', () => {
 
   it('should not re-build', () => {
     let ship = ModelFactory.createShip();
+    let isBuilded = false;
 
     ship.build([
       ModelFactory.createPosition(0, 0),
@@ -47,16 +48,21 @@ describe('Ship', () => {
       ModelFactory.createPosition(2, 0),
     ]);
 
-    ship.build([
-      ModelFactory.createPosition(0, 1),
-      ModelFactory.createPosition(1, 1),
-      ModelFactory.createPosition(2, 1),
-    ]);
+    try {
+      ship.build([
+        ModelFactory.createPosition(0, 1),
+        ModelFactory.createPosition(1, 1),
+        ModelFactory.createPosition(2, 1),
+      ]);
+    } catch (error) {
+      isBuilded = true;
+    }
 
     let {
       positions: [, secondPos],
     } = ship;
 
+    expect(isBuilded).toBeTrue();
     expect(secondPos.toString()).toBe(JSON.stringify({ x: 1, y: 0 }));
   });
 
