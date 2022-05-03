@@ -1,0 +1,5 @@
+export * from './shot.model'
+export * from './ship.model'
+export * from './cell-board.model'
+export * from './game-board.model'
+export * from './models.factory'
