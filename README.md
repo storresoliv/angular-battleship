@@ -1,6 +1,7 @@
-# ANGULAR BATTLESHIP
+# Angular Battleship
 Juego de mesa Battleship en Angular.
 
-# INDICE
+# Indice
 - [Documentacion](./documentation/WORKPLAN.md)
 - [Setup](./battleship/README.md)
+- [Aplicacion](https://storresoliv.github.io/angular-battleship/)

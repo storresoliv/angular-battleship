@@ -35,7 +35,7 @@ Estandares para los nombres de conceptos (clases) en angular:
 - servicio: NameService
 
 # DISEÑO ARQUITECTONICO
-
+En construccion...
 
 # DISEÑO DE DATOS
 <p align="center">
@@ -60,3 +60,4 @@ Estandares para los nombres de conceptos (clases) en angular:
 </p>
 
 # DISEÑO DE INTERFAZ
+En construccion...
