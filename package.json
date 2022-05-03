@@ -9,6 +9,7 @@
     "build:prod": "npm run --prefix ./battleship build:prod -- --output-path=../public",
     "test": "npm run --prefix ./battleship test",
     "test:watch": "npm run --prefix ./battleship test:watch",
+    "prepare": "husky install",
     "deploy": "git push origin `git subtree split --prefix public main`:gh-pages --force"
   },
   "repository": {
