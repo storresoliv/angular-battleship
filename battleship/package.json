@@ -8,7 +8,8 @@
     "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers ChromeHeadless --code-coverage --no-watch",
-    "test:watch": "ng test --browsers ChromeHeadless --code-coverage"
+    "test:watch": "ng test --browsers ChromeHeadless --code-coverage",
+    "install:deps": "npm install"
   },
   "private": true,
   "dependencies": {
