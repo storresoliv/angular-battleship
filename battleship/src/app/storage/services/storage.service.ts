@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Logger } from 'src/app/utils/logger';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +14,13 @@ export class StorageService {
   }
 
   setSession(key: string, value: string): void {
-    let encrypted = this.encrypt(value);
+    Logger.debug(`${value}`)
 
-    sessionStorage.setItem(key, encrypted);
+    if (typeof value === 'string') {
+      let encrypted = this.encrypt(value);
+
+      sessionStorage.setItem(key, encrypted);
+    }
   }
 
   getLocal(key: string): string {
@@ -25,6 +30,7 @@ export class StorageService {
   }
 
   getSession(key: string): string {
+    Logger.debug(`${key}`)
     let encrypted = sessionStorage.getItem(key) || '';
 
     return this.decrypt(encrypted);

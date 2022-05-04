@@ -9,9 +9,22 @@
     </ul>
   </section>
 
-  <section *ngIf="gameboard" class="text-center">
-    <p>barcos: {{ gameboard.ships.length }}</p>
+  <section *ngIf="canPlay && gameboard" class="text-center flex-auto text-2xl">
     <p>dimension: {{ gameboard.dimension }}</p>
-    <p>turnos: {{ shots > 0 ? shots : "infinitos" }}</p>
+    <p>barcos: {{ gameboard.ships.length }}</p>
+    <p>barcos hundidos: {{ shipsDestroyed }}</p>
+    <p>turnos: {{ shots < 0 ? "infinitos" : shots }}</p>
+  </section>
+
+  <section *ngIf="!canPlay" class="text-center flex-auto">
+    <p class="mb-6 text-3xl text-bold">Game Over</p>
+
+    <button
+      (click)="restart()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      type="button"
+    >
+      Intentar de nuevo
+    </button>
   </section>
 </div>

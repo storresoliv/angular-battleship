@@ -4,6 +4,7 @@ import { GameboardService } from '../modules/gameboard/services/gameboard.servic
 import { GameBoard, Ship } from '../models';
 import { ShipService } from '../modules/ship/services/ship.service';
 import { environment } from 'src/environments/environment';
+import { ShotService } from '../modules/shot/services/shot.service';
 
 @Component({
   selector: 'bts-battleship',
@@ -13,22 +14,27 @@ import { environment } from 'src/environments/environment';
 export class BattleshipComponent implements OnInit {
   constructor(
     private readonly shipService: ShipService,
-    private readonly gameboardService: GameboardService
+    private readonly gameboardService: GameboardService,
+    private readonly shotsService: ShotService
   ) {}
 
   ngOnInit(): void {
-    Logger.debug('building...');
-    this.buildGame();
+    this.listenPlayAgain();
   }
 
   private buildGame(): void {
+    Logger.debug('building...');
     Logger.debug('creating ships...');
     let ships = this.createShips();
 
     Logger.debug('creating gameboard...');
     let gameboard = this.createGameboard(environment.dimension, ships);
 
-    Logger.debug('load gameboard...')
+    let shots = this.getShots();
+    Logger.debug(`getting shots ${shots}`);
+
+    Logger.debug('load gameboard...');
+    this.gameboardService.setShots(shots);
     this.gameboardService.loadGameboard(gameboard);
   }
 
@@ -49,5 +55,15 @@ export class BattleshipComponent implements OnInit {
 
   private createGameboard(dimension: number, ships: Ship[]): GameBoard {
     return this.gameboardService.createGameboard(dimension, ships);
+  }
+
+  private getShots(): number {
+    return this.shotsService.getShots();
+  }
+
+  private listenPlayAgain(): void {
+    this.gameboardService.playAgainEvent().subscribe(() => {
+      this.buildGame();
+    });
   }
 }

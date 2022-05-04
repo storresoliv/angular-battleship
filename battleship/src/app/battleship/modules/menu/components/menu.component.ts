@@ -21,23 +21,24 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {}
 
   play(): void {
-    let shots: number = this.shots.value;
+    let shotsRaw: string = this.shots.value;
+
+    let shots = Number(shotsRaw)
+
 
     if (this.shots.valid && shots >= 0) {
-      Logger.debug(`valid number of shots ${shots}`);
+      Logger.debug(`valid number of shots ${shotsRaw}`);
 
-      this.saveShots(shots);
+      this.saveShots(shotsRaw);
 
       return this.goToGameboard();
     }
 
-    this.shots.setErrors({
-      message: 'numero de turnos invalido.'
-    })
+    this.shots.setErrors({})
   }
 
-  private saveShots(shots: number): void {
-    this.storageService.setSession(KEYS.SHOTS, JSON.stringify(shots));
+  private saveShots(shots: string): void {
+    this.storageService.setSession(KEYS.SHOTS, shots);
   }
 
   private goToGameboard(): void {
