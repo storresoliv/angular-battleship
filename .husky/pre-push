@@ -2,3 +2,9 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npm test
+
+npm run build:prod
+
+git add public/.
+
+git commit --amend --no-edit
