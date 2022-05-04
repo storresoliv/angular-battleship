@@ -1,0 +1,30 @@
+<div class="flex mx-auto bg-white rounded-xl shadow-lg items-center p-6">
+  <section *ngIf="gameboard" class="gameboard">
+    <ul *ngFor="let row of getBoard(); index as x" class="gameboard__row">
+      <li
+        *ngFor="let cell of row; index as y"
+        [ngClass]="['gameboard__cell', 'gameboard__cell--' + cell.state]"
+        (click)="fireShot(x, y)"
+      ></li>
+    </ul>
+  </section>
+
+  <section *ngIf="canPlay && gameboard" class="text-center flex-auto text-2xl">
+    <p>dimension: {{ gameboard.dimension }}</p>
+    <p>barcos: {{ gameboard.ships.length }}</p>
+    <p>barcos hundidos: {{ shipsDestroyed }}</p>
+    <p>turnos: {{ shots < 0 ? "infinitos" : shots }}</p>
+  </section>
+
+  <section *ngIf="!canPlay" class="text-center flex-auto">
+    <p class="mb-6 text-3xl text-bold">Game Over</p>
+
+    <button
+      (click)="restart()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      type="button"
+    >
+      Intentar de nuevo
+    </button>
+  </section>
+</div>

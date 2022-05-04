@@ -34,6 +34,10 @@ export class GameBoard extends ObjectValue {
     this.build();
   }
 
+  public get dimension(): number {
+    return this._dimension;
+  }
+
   public get board(): CellMatrix {
     return this._board;
   }

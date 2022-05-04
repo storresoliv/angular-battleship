@@ -47,6 +47,7 @@ Generar un proyecto con calidad el cual permita jugar al juego de mesa Battleshi
     - Generar documento plan de pruebas.
 - Generar modelo solucion.
 - Implementar la aplicacion.
+- Generar plan de despliegue
 
 # DOCUMENTOS
 - documento [Workplan](./WORKPLAN.md)
@@ -54,3 +55,4 @@ Generar un proyecto con calidad el cual permita jugar al juego de mesa Battleshi
 - documento [Design](./DESIGN.md)
 - documento [Testplan](./TESTPLAN.md)
 - documento [Solution](./SOLUTION.md)
+- documento [Deploy](./DEPLOY.md)
