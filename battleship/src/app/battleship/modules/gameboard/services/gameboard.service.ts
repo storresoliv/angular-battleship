@@ -31,7 +31,7 @@ export class GameboardService {
     this._shots = shots;
   }
 
-  public get gameboard(): Observable<GameBoard> {
+  public getGameboard(): Observable<GameBoard> {
     return this._gameboard;
   }
 

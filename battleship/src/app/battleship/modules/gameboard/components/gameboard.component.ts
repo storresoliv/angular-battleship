@@ -43,7 +43,7 @@ export class GameboardComponent implements OnInit {
   }
 
   private listenGameboardChanges(): void {
-    this.gameboardService.gameboard.subscribe((gameboard) => {
+    this.gameboardService.getGameboard().subscribe((gameboard) => {
       Logger.debug(
         `gameboard are loaded with dimension ${gameboard.dimension}`
       );

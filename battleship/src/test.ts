@@ -6,6 +6,7 @@ import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
+import { Logger } from './app/utils/logger';
 
 declare const require: {
   context(path: string, deep?: boolean, filter?: RegExp): {
@@ -24,3 +25,8 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
+
+Logger.debug('test message')
+Logger.info('test message')
+Logger.warn('test message')
+Logger.error('test message')

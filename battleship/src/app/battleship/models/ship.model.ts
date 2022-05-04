@@ -37,6 +37,7 @@ export class Ship extends ObjectValue {
       this.throwError(
         `positions length should be ${this._size} instead ${positions.length}`
       );
+      
     if (this._positions.length > 0)
       this.throwError('this ship is already builded.');
 
