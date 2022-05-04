@@ -34,7 +34,7 @@ describe('StorageService', () => {
     service.clearLocal();
 
     let local = service.getLocal('testKey');
-    expect(local).toBe(null);
+    expect(local).toBe('');
   });
 
   it('should clear session', () => {
@@ -43,6 +43,6 @@ describe('StorageService', () => {
     service.clearSession();
 
     let local = service.getSession('testKey');
-    expect(local).toBe(null);
+    expect(local).toBe('');
   });
 });
