@@ -16,4 +16,22 @@
   <button (click)="play()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
     Iniciar juego
   </button>
+
+  <section class="mt-12">
+    <p>Tambien puede elegir entre estos 3 niveles</p>
+
+    <div class="flex flex-col">
+      <button (click)="playEasy()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded focus:outline-none focus:shadow-outline mt-6 ml-6 mr-6" type="button">
+        Facil
+      </button>
+      <button (click)="playMedium()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded focus:outline-none focus:shadow-outline m-6" type="button">
+        Medio
+      </button>
+      <button (click)="playHard()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded focus:outline-none focus:shadow-outline ml-6 mr-6" type="button">
+        Dificil
+      </button>
+    </div>
+  </section>
+
+
 </form>
