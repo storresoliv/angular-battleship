@@ -1,5 +1,7 @@
-<div class="flex mx-auto bg-white rounded-xl shadow-lg items-center p-6">
-  <section *ngIf="gameboard" class="gameboard">
+<main
+  class="grid grid-rows-3 grid-flow-col gap-4 mx-auto bg-white rounded-xl shadow-lg items-center p-6"
+>
+  <section *ngIf="gameboard" class="gameboard row-span-3">
     <ul *ngFor="let row of getBoard(); index as x" class="gameboard__row">
       <li
         *ngFor="let cell of row; index as y"
@@ -9,22 +11,39 @@
     </ul>
   </section>
 
-  <section *ngIf="canPlay && gameboard" class="text-center flex-auto text-2xl">
-    <p>dimension: {{ gameboard.dimension }}</p>
-    <p>barcos: {{ gameboard.ships.length }}</p>
-    <p>barcos hundidos: {{ shipsDestroyed }}</p>
-    <p>turnos: {{ shots < 0 ? "infinitos" : shots }}</p>
+  <section class="col-span-2 row-span-1">
+    <div
+      *ngIf="canPlay && gameboard"
+      class="text-center flex-auto text-2xl"
+    >
+      <div class="text-left">
+        <p>Dimension: {{ gameboard.dimension }}</p>
+        <p>Barcos: {{ gameboard.ships.length }}</p>
+        <p>Barcos hundidos: {{ shipsDestroyed }}</p>
+        <p>Turnos: {{ shots < 0 ? "infinitos" : shots }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="!canPlay" class="text-center flex-auto">
+      <p class="mb-6 text-3xl text-bold">Game Over</p>
+
+      <button
+        (click)="restart()"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="button"
+      >
+        Intentar de nuevo
+      </button>
+    </div>
   </section>
 
-  <section *ngIf="!canPlay" class="text-center flex-auto">
-    <p class="mb-6 text-3xl text-bold">Game Over</p>
-
+  <section class="relative h-full row-span-2 col-span-2">
     <button
-      (click)="restart()"
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      (click)="back()"
+      class="absolute bottom-0 right-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       type="button"
     >
-      Intentar de nuevo
+      Volver
     </button>
   </section>
-</div>
+</main>
