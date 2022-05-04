@@ -10,7 +10,8 @@
     "test:watch": "npm run --prefix ./battleship test:watch",
     "postinstall": "npm run --prefix ./battleship install:deps",
     "prepare": "husky install",
-    "deploy": "git push origin `git subtree split --prefix public build`:gh-pages --force"
+    "deploy": "git push origin `git subtree split --prefix public develop`:gh-pages --force",
+    "deploy:prod": "git push origin `git subtree split --prefix public main`:gh-pages --force"
   },
   "repository": {
     "type": "git",
