@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { GameboardModule } from '../modules/gameboard/gameboard.module';
 import { ShipModule } from '../modules/ship/ship.module';
 
@@ -11,7 +12,7 @@ describe('BattleshipComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ BattleshipComponent ],
-      imports: [GameboardModule, ShipModule]
+      imports: [GameboardModule, ShipModule, RouterTestingModule]
     })
     .compileComponents();
   });

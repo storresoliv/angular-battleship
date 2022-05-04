@@ -24,8 +24,8 @@ export class StorageService {
     return this.decrypt(encrypted);
   }
 
-  getSession(key: string): string | null {
-    let encrypted = localStorage.getItem(key) || '';
+  getSession(key: string): string {
+    let encrypted = sessionStorage.getItem(key) || '';
 
     return this.decrypt(encrypted);
   }
