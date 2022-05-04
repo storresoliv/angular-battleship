@@ -4,11 +4,12 @@ import { BattleshipRoutingModule } from './battleship-routing.module';
 
 import { BattleshipComponent } from './components/battleship.component';
 
-import { GameboardModule } from './gameboard/gameboard.module';
-import { ShipModule } from './ship/ship.module';
+import { GameboardModule } from './modules/gameboard/gameboard.module';
+import { ShipModule } from './modules/ship/ship.module';
+import { MenuModule } from './modules/menu/menu.module';
 
 @NgModule({
   declarations: [BattleshipComponent],
-  imports: [CommonModule, BattleshipRoutingModule, GameboardModule, ShipModule],
+  imports: [CommonModule, BattleshipRoutingModule, GameboardModule, ShipModule, MenuModule],
 })
 export class BattleshipModule {}

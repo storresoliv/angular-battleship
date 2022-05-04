@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { GameboardModule } from '../gameboard/gameboard.module';
-import { ShipModule } from '../ship/ship.module';
+import { GameboardModule } from '../modules/gameboard/gameboard.module';
+import { ShipModule } from '../modules/ship/ship.module';
 
 import { BattleshipComponent } from './battleship.component';
 

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'game',
+    path: '',
     loadChildren: () => import('./battleship/battleship.module').then(m => m.BattleshipModule)
   }
 ];

@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   logLevel: 4,
+  dimension: 10,
 };
 
 /*

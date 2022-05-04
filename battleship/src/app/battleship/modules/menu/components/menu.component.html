@@ -1,0 +1,19 @@
+<form class="text-center items-center max-w-xs mx-auto bg-white rounded-xl shadow-lg p-6">
+  <div class="mb-4 text-left">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="turnos">
+      Ingrese el numero de turnos
+    </label>
+    <input 
+      [formControl]="shots" 
+      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+      id="shots" 
+      type="text" 
+      oninput="this.value = Math.round(this.value);" 
+      placeholder="numero de turnos">
+      <p class="text-red-500 text-xs italic mt-2" *ngIf="shots.invalid">Ingresa un valor de turnos valido.</p>
+  </div>
+
+  <button (click)="play()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+    Iniciar juego
+  </button>
+</form>

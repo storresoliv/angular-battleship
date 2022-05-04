@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from 'src/app/utils/logger';
-import { STATE } from '../../battleship.constant';
-import { CellBoard, GameBoard, Ship } from '../../models';
+import { STATE } from '../../../battleship.constant';
+import { CellBoard, GameBoard, Ship } from '../../../models';
 import { GameboardService } from '../services/gameboard.service';
 
 @Component({
@@ -27,9 +27,10 @@ export class GameboardComponent implements OnInit {
   }
 
   private listenGameboardChanges(): void {
-    this.gameboardService.gameboard.subscribe((gameboard) =>
-      this.setGameboard(gameboard)
-    );
+    this.gameboardService.gameboard.subscribe((gameboard) => {
+      Logger.debug(`gameboard are loaded with dimension ${gameboard.dimension}`);
+      this.setGameboard(gameboard);
+    });
   }
 
   private setGameboard(gameboard: GameBoard): void {

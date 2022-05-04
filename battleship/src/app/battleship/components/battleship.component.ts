@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Logger } from 'src/app/utils/logger';
-import { GameboardService } from '../gameboard/services/gameboard.service';
+import { GameboardService } from '../modules/gameboard/services/gameboard.service';
 import { GameBoard, Ship } from '../models';
-import { ShipService } from '../ship/services/ship.service';
+import { ShipService } from '../modules/ship/services/ship.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'bts-battleship',
@@ -25,7 +26,7 @@ export class BattleshipComponent implements OnInit {
     let ships = this.createShips();
 
     Logger.debug('creating gameboard...');
-    let gameboard = this.createGameboard(10, ships);
+    let gameboard = this.createGameboard(environment.dimension, ships);
 
     Logger.debug('load gameboard...')
     this.gameboardService.loadGameboard(gameboard);
