@@ -22,6 +22,12 @@ export class BattleshipComponent implements OnInit {
     this.listenPlayAgain();
   }
 
+  private listenPlayAgain(): void {
+    this.gameboardService.playAgainEvent().subscribe(() => {
+      this.buildGame();
+    });
+  }
+
   private buildGame(): void {
     Logger.debug('building...');
     Logger.debug('creating ships...');
@@ -59,11 +65,5 @@ export class BattleshipComponent implements OnInit {
 
   private getShots(): number {
     return this.shotsService.getShots();
-  }
-
-  private listenPlayAgain(): void {
-    this.gameboardService.playAgainEvent().subscribe(() => {
-      this.buildGame();
-    });
   }
 }
