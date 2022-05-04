@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run --prefix ./battleship start",
     "build": "npm run --prefix ./battleship build",
-    "build:prod": "npm run --prefix ./battleship build:prod -- --output-path=../public --base-href='https://storresoliv.github.io/angular-battleship/'",
+    "build:prod": "npm run --prefix ./battleship build:prod -- --output-path=../public --base-href=/angular-battleship --deploy-url=https://storresoliv.github.io/angular-battleship/",
     "test": "npm run --prefix ./battleship test",
     "test:watch": "npm run --prefix ./battleship test:watch",
     "postinstall": "npm run --prefix ./battleship install:deps",
