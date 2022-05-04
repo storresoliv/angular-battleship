@@ -26,7 +26,7 @@ export class MenuComponent implements OnInit {
     let shots = Number(shotsRaw)
 
 
-    if (this.shots.valid && shots >= 0) {
+    if (this.shots.valid && shots > 0) {
       Logger.debug(`valid number of shots ${shotsRaw}`);
 
       this.saveShots(shotsRaw);
