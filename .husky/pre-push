@@ -7,4 +7,4 @@ npm run build:prod
 
 git add public/.
 
-git commit --amend
+git commit --amend --no-edit
