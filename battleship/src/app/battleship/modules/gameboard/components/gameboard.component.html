@@ -1,17 +1,19 @@
+<div class="md:h-12"></div>
 <main
-  class="grid grid-rows-3 grid-flow-col gap-4 mx-auto bg-white rounded-xl shadow-lg items-center p-6"
+  class="md:container md:mx-auto md:grid md:grid-rows-3 md:grid-flow-col md:gap-4 md:bg-white md:rounded-xl md:shadow-lg items-center p-3"
 >
-  <section *ngIf="gameboard" class="gameboard row-span-3">
+  <section *ngIf="gameboard" class="w-full md:row-span-3 gameboard">
     <ul *ngFor="let row of getBoard(); index as x" class="gameboard__row">
       <li
         *ngFor="let cell of row; index as y"
-        [ngClass]="['gameboard__cell', 'gameboard__cell--' + cell.state]"
+        [ngClass]="['gameboard__cell h-4 w-4 sxx:h-6 sxx:w-6 sx:h-8 sx:w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 xl:h-20 xl:w-20', 'gameboard__cell--' + cell.state]"
         (click)="fireShot(x, y)"
       ></li>
     </ul>
   </section>
+  
 
-  <section class="col-span-2 row-span-1">
+  <section class="md:col-span-2 md:row-span-1 mb-4">
     <div
       *ngIf="canPlay && gameboard"
       class="text-center flex-auto text-2xl"
@@ -37,10 +39,10 @@
     </div>
   </section>
 
-  <section class="relative h-full row-span-2 col-span-2">
+  <section class="md:relative md:h-full md:row-span-2 md:col-span-2 text-center">
     <button
       (click)="back()"
-      class="absolute bottom-0 right-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      class="md:absolute bottom-0 right-0 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
       type="button"
     >
       Volver
