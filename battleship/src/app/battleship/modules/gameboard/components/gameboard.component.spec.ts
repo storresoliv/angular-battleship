@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { STATE } from 'src/app/battleship/battleship.constant';
 import { ModelsFactory } from 'src/app/battleship/models';
@@ -13,6 +14,7 @@ describe('GameboardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [GameboardComponent],
+      imports: [RouterTestingModule]
     }).compileComponents();
   });
 
