@@ -27,7 +27,8 @@
     </div>
 
     <div *ngIf="!canPlay" class="text-center flex-auto">
-      <p class="mb-6 text-3xl text-bold">Game Over</p>
+      <p *ngIf="isWin" class="mb-6 text-3xl text-bold">Felicidades has ganado.</p>
+      <p *ngIf="!isWin" class="mb-6 text-3xl text-bold">Game Over</p>
 
       <button
         (click)="restart()"

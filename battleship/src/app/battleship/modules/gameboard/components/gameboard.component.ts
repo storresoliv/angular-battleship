@@ -14,15 +14,31 @@ export class GameboardComponent implements OnInit {
   private _gameboard!: GameBoard;
   private _shots = -1;
   private _shipsDestroyed = 0;
+  private _isWin = false;
 
-  constructor(private readonly gameboardService: GameboardService, private readonly router: Router) {}
+  constructor(
+    private readonly gameboardService: GameboardService,
+    private readonly router: Router
+  ) {}
 
   public get shipsDestroyed(): number {
     return this._shipsDestroyed;
   }
 
   public get canPlay(): boolean {
+    if (
+      this._shipsDestroyed === this.getShips().length &&
+      this._shipsDestroyed > 0
+    ) {
+      this._isWin = true;
+      return false;
+    }
+
     return this.shots !== 0;
+  }
+
+  public get isWin(): boolean {
+    return this._isWin;
   }
 
   public get gameboard(): GameBoard {
@@ -44,7 +60,11 @@ export class GameboardComponent implements OnInit {
   }
 
   public back(): void {
-    this.router.navigate(['battleship/menu'])
+    this.router.navigate(['battleship/menu']);
+  }
+
+  private resetShipsDestroyed(): void {
+    this._shipsDestroyed = 0;
   }
 
   private listenGameboardChanges(): void {
@@ -56,6 +76,8 @@ export class GameboardComponent implements OnInit {
       this.getShots();
 
       Logger.debug(`${this._shots}`);
+
+      this.resetShipsDestroyed();
 
       this.setGameboard(gameboard);
     });
