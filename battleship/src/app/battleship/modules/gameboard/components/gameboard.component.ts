@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Logger } from 'src/app/utils/logger';
 import { STATE } from '../../../battleship.constant';
 import { CellBoard, GameBoard, Ship } from '../../../models';
@@ -14,7 +15,7 @@ export class GameboardComponent implements OnInit {
   private _shots = -1;
   private _shipsDestroyed = 0;
 
-  constructor(private readonly gameboardService: GameboardService) {}
+  constructor(private readonly gameboardService: GameboardService, private readonly router: Router) {}
 
   public get shipsDestroyed(): number {
     return this._shipsDestroyed;
@@ -40,6 +41,10 @@ export class GameboardComponent implements OnInit {
 
   public restart(): void {
     this.gameboardService.playAgain();
+  }
+
+  public back(): void {
+    this.router.navigate(['battleship/menu'])
   }
 
   private listenGameboardChanges(): void {
